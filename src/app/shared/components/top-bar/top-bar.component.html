@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span>Cavavin</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="fill-remaining-space"></span>
+
+  <div id="logged-in" *ngIf="(currentUser | async); let user; else: loading">{{ user.email }}</div>
+  <ng-template #loading>
+    <div class="mat-button secondary-round-btn">Login</div>
+  </ng-template>
+</mat-toolbar>
